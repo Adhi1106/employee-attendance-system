@@ -49,6 +49,16 @@ export class EmployeeList implements OnInit {
     this.loadData();
   }
 
+  get filteredEmployees(): EmployeeRecord[] {
+    if (this.departmentFilter === 'All') {
+      return this.employees;
+    }
+
+    return this.employees.filter(
+      (employee) => employee.department.toLowerCase() === this.departmentFilter.toLowerCase(),
+    );
+  }
+
   openAddEmployeeDialog() {
     const dialogRef = this.dialog.open(EmployeeDialog, {
       data: { mode: 'add' },
@@ -106,23 +116,13 @@ export class EmployeeList implements OnInit {
       .join('');
   }
 
-  get filteredEmployees(): EmployeeRecord[] {
-    if (this.departmentFilter === 'All') {
-      return this.employees;
-    }
-
-    return this.employees.filter(
-      (employee) => employee.department.toLowerCase() === this.departmentFilter.toLowerCase(),
-    );
-  }
-
   private loadData() {
     this.employeeManagementService
       .getEmployees()
       .pipe(catchError(() => of([])))
       .subscribe((employees) => {
-      this.employees = employees;
-      this.departments = ['All', ...new Set(employees.map((employee) => employee.department))];
-    });
+        this.employees = employees;
+        this.departments = ['All', ...new Set(employees.map((employee) => employee.department))];
+      });
   }
 }
