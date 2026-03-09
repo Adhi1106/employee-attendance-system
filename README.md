@@ -20,4 +20,5 @@ An Angular-based HR management system for tracking employee attendance and leave
 ## How to Run
 
 npm install
+
 ng serve
