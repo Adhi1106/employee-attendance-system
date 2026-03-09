@@ -2,6 +2,23 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.13.
 
+Angular + TypeScript HR management system for tracking employee attendance and leave requests.
+
+## Features
+- Employee attendance tracking
+- Leave request submission
+- HR leave approval module
+- Dashboard with analytics
+- Angular Material UI
+- Mock backend using JSON Server
+
+## Tech Stack
+- Angular
+- TypeScript
+- Angular Material
+- RxJS
+- JSON Server
+
 ## Development server
 
 To start a local development server, run:
