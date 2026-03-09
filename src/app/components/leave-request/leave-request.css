@@ -1,0 +1,59 @@
+.leave-page {
+  display: grid;
+  place-items: center;
+}
+
+.leave-card {
+  width: min(100%, 760px);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 12px 28px rgba(102, 12, 55, 0.1);
+}
+
+.leave-card h2 {
+  margin: 0;
+  color: #8f0045;
+}
+
+.subtitle {
+  margin: 6px 0 16px;
+  color: #704c5b;
+}
+
+.leave-form {
+  display: grid;
+  gap: 10px;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.error-message {
+  margin: 2px 0 4px;
+  color: #b3261e;
+  font-weight: 500;
+}
+
+.hint-text {
+  margin: 0;
+  color: #7d204a;
+  font-size: 0.9rem;
+}
+
+button[mat-raised-button] {
+  justify-self: start;
+  padding-inline: 18px;
+}
+
+@media (max-width: 680px) {
+  .leave-card {
+    padding: 18px;
+  }
+
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+}

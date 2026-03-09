@@ -1,0 +1,93 @@
+.employee-card {
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 28px rgba(102, 12, 55, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 245, 249, 0.96));
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.card-header h2 {
+  margin: 0;
+  color: #8f0045;
+}
+
+.filter-row {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.table-wrap {
+  margin-top: 10px;
+  overflow: auto;
+}
+
+.employee-table {
+  width: 100%;
+  animation: fadeUp 260ms ease-out;
+}
+
+.employee-table th {
+  color: #7d204a;
+  font-weight: 600;
+}
+
+.employee-table .mat-mdc-row {
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.employee-table .mat-mdc-row:hover {
+  background-color: rgba(206, 52, 111, 0.06);
+  transform: translateY(-1px);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: #d65a88;
+  color: #ffffff;
+  font-weight: 700;
+  background-size: cover;
+  background-position: center;
+}
+
+.name-cell {
+  display: grid;
+  gap: 2px;
+}
+
+.name-cell .primary {
+  font-weight: 600;
+}
+
+.name-cell .secondary {
+  font-size: 0.8rem;
+  color: #7b6570;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

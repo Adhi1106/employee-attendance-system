@@ -1,0 +1,137 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(186, 0, 92, 0.14), transparent 40%),
+    linear-gradient(180deg, #fff9fb 0%, #fff2f6 52%, #fff6f9 100%);
+}
+
+.top-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 64px;
+  background: linear-gradient(90deg, #b20058 0%, #ce346f 65%, #d54877 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 26px rgba(109, 7, 53, 0.24);
+}
+
+.menu-btn {
+  margin-right: 8px;
+}
+
+.app-title {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  flex: 1;
+}
+
+.role-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 999px;
+  margin-left: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.role-btn {
+  border-radius: 999px;
+  min-width: 0;
+  height: 36px;
+  padding-inline: 14px;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.role-btn mat-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.role-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.role-btn.active {
+  color: #9a104f;
+  background: #ffffff;
+  box-shadow: 0 6px 14px rgba(77, 8, 38, 0.25);
+}
+
+.role-btn.active:hover {
+  transform: translateY(-1px);
+}
+
+.layout-container {
+  min-height: calc(100vh - 64px);
+}
+
+.app-sidenav {
+  width: 260px;
+  border-right: none;
+  background: linear-gradient(180deg, #fff6f8 0%, #ffeff4 100%);
+  box-shadow: 8px 0 24px rgba(86, 5, 40, 0.08);
+}
+
+.app-sidenav .mat-mdc-list-item {
+  border-radius: 12px;
+  margin: 6px 10px;
+}
+
+.app-sidenav .mat-icon {
+  color: #8c2553;
+}
+
+.active-link {
+  background: rgba(186, 0, 92, 0.12);
+  color: #8f0045;
+}
+
+.layout-content {
+  overflow: auto;
+}
+
+.content-shell {
+  padding: 24px;
+}
+
+@media (max-width: 991px) {
+  .top-toolbar {
+    height: 58px;
+  }
+
+  .layout-container {
+    min-height: calc(100vh - 58px);
+  }
+
+  .content-shell {
+    padding: 16px;
+  }
+
+  .role-switcher {
+    gap: 4px;
+    margin-left: 8px;
+    padding: 3px;
+  }
+
+  .role-btn {
+    height: 34px;
+    padding-inline: 10px;
+  }
+
+  .role-btn span {
+    display: none;
+  }
+
+  .role-btn mat-icon {
+    margin-right: 0;
+  }
+}

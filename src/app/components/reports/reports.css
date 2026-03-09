@@ -1,0 +1,27 @@
+.reports-page h2 {
+  margin: 0 0 14px;
+  color: #8f0045;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.report-card {
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(102, 12, 55, 0.08);
+}
+
+.report-card h3 {
+  margin: 0;
+  color: #6f3e53;
+}
+
+.report-card p {
+  margin: 10px 0 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+}

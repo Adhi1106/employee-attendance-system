@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #2f1b24;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.2px;
+}
+
+.mat-mdc-card {
+  --mdc-elevated-card-container-color: #ffffff;
+}

@@ -1,0 +1,23 @@
+.attendance-card {
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 28px rgba(102, 12, 55, 0.08);
+}
+
+.attendance-card h2 {
+  margin: 0 0 12px;
+  color: #8f0045;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+.attendance-table {
+  width: 100%;
+}
+
+.attendance-table th {
+  color: #7d204a;
+  font-weight: 600;
+}

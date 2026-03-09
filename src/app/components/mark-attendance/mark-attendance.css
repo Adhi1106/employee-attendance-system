@@ -1,0 +1,27 @@
+.mark-attendance-page {
+  display: grid;
+  place-items: center;
+}
+
+.mark-attendance-card {
+  width: min(100%, 620px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(102, 12, 55, 0.1);
+}
+
+.mark-attendance-card h2 {
+  margin: 0 0 14px;
+  color: #8f0045;
+}
+
+.attendance-form {
+  display: grid;
+  gap: 10px;
+}
+
+.hint-text {
+  margin: 0;
+  color: #7d204a;
+  font-size: 0.9rem;
+}

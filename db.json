@@ -1,0 +1,74 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "department": "HR",
+      "email": "alice@company.com",
+      "role": "HR",
+      "avatar": ""
+    },
+    {
+      "id": "2",
+      "name": "Bob",
+      "department": "IT",
+      "email": "bob@company.com",
+      "role": "Employee",
+      "avatar": ""
+    },
+    {
+      "id": "3",
+      "name": "Charlie",
+      "department": "Finance",
+      "email": "charlie@company.com",
+      "role": "Employee",
+      "avatar": ""
+    }
+  ],
+  "attendance": [
+    {
+      "id": "a1",
+      "employeeId": "1",
+      "employeeName": "Alice",
+      "date": "2026-03-09",
+      "status": "Present"
+    },
+    {
+      "id": "a2",
+      "employeeId": "2",
+      "employeeName": "Bob",
+      "date": "2026-03-09",
+      "status": "Present"
+    },
+    {
+      "id": "a3",
+      "employeeId": "3",
+      "employeeName": "Charlie",
+      "date": "2026-03-09",
+      "status": "Absent"
+    }
+  ],
+  "leaveRequests": [
+    {
+      "id": "l1",
+      "employee": "Bob",
+      "employeeId": "2",
+      "type": "Sick Leave",
+      "start": "2026-03-11",
+      "end": "2026-03-12",
+      "reason": "Fever and rest advised",
+      "status": "Approved"
+    },
+    {
+      "id": "l2",
+      "employee": "Charlie",
+      "employeeId": "3",
+      "type": "Casual Leave",
+      "start": "2026-03-15",
+      "end": "2026-03-16",
+      "reason": "Family function",
+      "status": "Pending"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

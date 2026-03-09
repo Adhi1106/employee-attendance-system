@@ -1,0 +1,77 @@
+<section class="employee-page">
+  <mat-card class="employee-card">
+    <div class="card-header">
+      <h2>Employee Management</h2>
+      <button mat-flat-button color="primary" (click)="openAddEmployeeDialog()">
+        <mat-icon>person_add</mat-icon>
+        Add Employee
+      </button>
+    </div>
+
+    <div class="filter-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Department</mat-label>
+        <mat-select [(value)]="departmentFilter">
+          <mat-option *ngFor="let department of departments" [value]="department">
+            {{ department }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="table-wrap">
+      <table mat-table [dataSource]="filteredEmployees" class="employee-table">
+        <ng-container matColumnDef="avatar">
+          <th mat-header-cell *matHeaderCellDef>Avatar</th>
+          <td mat-cell *matCellDef="let employee">
+            <div class="avatar" [style.background-image]="employee.avatar ? 'url(' + employee.avatar + ')' : 'none'">
+              <span *ngIf="!employee.avatar">{{ getInitials(employee.name) }}</span>
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let employee">
+            <div class="name-cell">
+              <span class="primary">{{ employee.name }}</span>
+              <span class="secondary">ID: {{ employee.id }}</span>
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="department">
+          <th mat-header-cell *matHeaderCellDef>Department</th>
+          <td mat-cell *matCellDef="let employee">{{ employee.department }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let employee">{{ employee.email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef>Role</th>
+          <td mat-cell *matCellDef="let employee">{{ employee.role }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let employee">
+            <div class="action-buttons">
+              <button mat-icon-button color="primary" (click)="openEditEmployeeDialog(employee)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteEmployee(employee)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </mat-card>
+</section>

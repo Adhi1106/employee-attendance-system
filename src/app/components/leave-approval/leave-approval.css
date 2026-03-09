@@ -1,0 +1,105 @@
+.approval-card {
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(102, 12, 55, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 244, 248, 0.95));
+}
+
+.approval-card h2 {
+  margin: 0;
+  color: #8f0045;
+}
+
+.subtitle {
+  margin: 6px 0 14px;
+  color: #704c5b;
+}
+
+.table-wrap {
+  overflow: auto;
+  animation: fadeUp 280ms ease-out;
+}
+
+.approval-table {
+  width: 100%;
+}
+
+.approval-table th {
+  color: #7d204a;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.action-buttons button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(128, 24, 70, 0.16);
+}
+
+.status-chip {
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+}
+
+.chip-pending {
+  background-color: #ffe7a8;
+  color: #7a5b00;
+}
+
+.chip-approved {
+  background-color: #b6ebc8;
+  color: #0f6a2f;
+}
+
+.chip-rejected {
+  background-color: #f6c1c5;
+  color: #8a1f28;
+}
+
+.loading-state {
+  display: grid;
+  gap: 10px;
+}
+
+.skeleton-line {
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f4e8ed 25%, #fdf7fa 50%, #f4e8ed 75%);
+  background-size: 240% 100%;
+  animation: shimmer 1.3s infinite;
+}
+
+.empty-state {
+  margin: 10px 0 2px;
+  color: #8c7b82;
+  font-size: 0.98rem;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

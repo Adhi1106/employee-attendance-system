@@ -1,0 +1,61 @@
+<section class="mark-attendance-page">
+  <mat-card class="mark-attendance-card">
+    <h2>Mark Attendance</h2>
+
+    <form class="attendance-form" (ngSubmit)="submitAttendance()">
+      <mat-form-field appearance="outline">
+        <mat-label>Employee</mat-label>
+        <mat-select
+          [(ngModel)]="attendance.employeeId"
+          name="employeeId"
+          required
+          (ngModelChange)="onEmployeeChange($event)"
+        >
+          <mat-option *ngFor="let employee of employees" [value]="employee.id">
+            {{ employee.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p class="hint-text" *ngIf="!isLoadingEmployees && employees.length === 0">
+        No employees found. Please add employees from the HR panel first.
+      </p>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [min]="todayDate"
+          [max]="todayDate"
+          [matDatepickerFilter]="todayOnlyFilter"
+          [(ngModel)]="attendance.date"
+          name="date"
+          readonly
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <p class="hint-text">Attendance can be marked for today only.</p>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="attendance.status" name="status" required>
+          <mat-option value="Present">Present</mat-option>
+          <mat-option value="Absent">Absent</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        [disabled]="isSubmitting || isLoadingEmployees || employees.length === 0 || !attendance.employeeId || !attendance.date || !attendance.status"
+      >
+        {{ isSubmitting ? 'Submitting...' : 'Submit Attendance' }}
+      </button>
+    </form>
+  </mat-card>
+</section>

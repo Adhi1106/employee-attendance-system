@@ -1,0 +1,42 @@
+.leave-status-card {
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 28px rgba(102, 12, 55, 0.08);
+}
+
+.leave-status-card h2 {
+  margin: 0 0 12px;
+  color: #8f0045;
+}
+
+.employee-picker {
+  min-width: 260px;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+.leave-status-table {
+  width: 100%;
+}
+
+.leave-status-table th {
+  color: #7d204a;
+  font-weight: 600;
+}
+
+.chip-pending {
+  background: #ffe7a8;
+  color: #7a5b00;
+}
+
+.chip-approved {
+  background: #b6ebc8;
+  color: #0f6a2f;
+}
+
+.chip-rejected {
+  background: #f6c1c5;
+  color: #8a1f28;
+}
